@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-labelledby="title desc">
+  <title id="title">Payment and membership system reconstruction</title>
+  <desc id="desc">Abstract diagram of multiple brands connected through a common layer.</desc>
+  <rect width="800" height="450" rx="28" fill="#101214"/>
+  <g fill="none" stroke="#596270" stroke-width="4">
+    <path d="M120 125H305M495 125H680M120 325H305M495 325H680"/>
+    <path d="M400 90V360" stroke="#2f6bff" stroke-dasharray="10 12"/>
+  </g>
+  <g fill="#252a31" stroke="#596270" stroke-width="3">
+    <rect x="54" y="79" width="138" height="92" rx="18"/><rect x="608" y="79" width="138" height="92" rx="18"/>
+    <rect x="54" y="279" width="138" height="92" rx="18"/><rect x="608" y="279" width="138" height="92" rx="18"/>
+  </g>
+  <rect x="303" y="135" width="194" height="180" rx="34" fill="#c8f135"/>
+  <circle cx="400" cy="225" r="44" fill="#101214"/>
+  <path d="M382 225l12 12 26-30" fill="none" stroke="#c8f135" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  <g fill="#2f6bff"><circle cx="220" cy="125" r="10"/><circle cx="580" cy="125" r="10"/><circle cx="220" cy="325" r="10"/><circle cx="580" cy="325" r="10"/></g>
+</svg>

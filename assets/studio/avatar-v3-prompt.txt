@@ -1,0 +1,12 @@
+Use case: style-transfer
+Asset type: full-bleed square portrait panel/background for a standalone HTML portfolio footer
+Input images: Image 1 is the EDIT TARGET and the confirmed user's manga avatar.
+Primary request: Restyle Image 1 into the Portfolio Design System 3.0 visual language while preserving exactly the same character identity and composition.
+Scene/backdrop: Clean opaque #F5F6F8 background with a subtle, evenly spaced 28px dot grid. No warm beige or brown cast.
+Subject: Preserve exactly the same front-facing character identity, long wavy hair, large round glasses, cream/cool-white short sleeve shirt, both hands holding the coconut, straw, face proportions, expression, and centered waist-up pose from Image 1.
+Style/medium: Crisp editorial manga linework, flatter clean fills, border-first UI clarity, polished portfolio illustration.
+Composition/framing: Square 1024 composition. Keep the entire character visible exactly as the source composition; do not crop the hair, hands, coconut, glasses, or shirt.
+Color palette: 90% clean neutral white/#F5F6F8 and ink #101214; 8% saturated brand blue #2F6BFF; at most 2% lime #C8F135 as the single case accent. Hair near ink black, glasses ink black, shirt cool white, coconut clean neutral with one small lime accent, straw brand blue.
+Critical eye requirement: BOTH eye interiors must be plain, completely solid white shapes. NO irises, NO pupils, NO dots, NO glints, NO highlights, NO colored shading, NO gray shading, and NO marks of any kind inside either eye. Retain the eyelids, eyelashes, eye outlines, and glasses around them. The blank white eye interiors are required because HTML will overlay animated pupils.
+Constraints: Preserve the whole character and all identity-defining features. Keep the same front-facing pose and both-hand grip on the coconut. Use an opaque background. No text.
+Avoid: text, logos, watermark, UI labels, shadowed mockup frame, extra objects, fake transparency, brown, sepia, warm beige, warm color cast, gradients, photorealism, 3D rendering, cropped hair, cropped hands, cropped coconut, any eye interior detail.

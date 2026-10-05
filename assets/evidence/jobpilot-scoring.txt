@@ -1,0 +1,54 @@
+# JobPilot — implementation excerpt, 2026-09-08
+# Source: analyzer/jd_scorer.py
+# Personal configuration and candidate data are not included.
+
+def score_one(row) -> tuple[int, ScoreBreakdown]:
+    blob = _blob(row)
+    bd = ScoreBreakdown()
+
+    if _is_overseas(row):
+        # 海外軌：去 jp 化框架（無 salary/visa；加 role_fit；tier 由公司名推斷）
+        bd.market_keywords = score_market_keywords(blob, bd)
+        bd.tier_preference = score_tier_preference(_overseas_tier(row["company"]), bd)
+        bd.tech_overlap = score_tech_overlap(blob, bd)
+        bd.role_fit = score_role_fit(row["title"], bd)
+        bd.domain = score_domain(blob, bd)
+        weighted = (
+            bd.market_keywords * OVERSEAS_WEIGHTS["market_keywords"]
+            + bd.tier_preference * OVERSEAS_WEIGHTS["tier_preference"]
+            + bd.tech_overlap * OVERSEAS_WEIGHTS["tech_overlap"]
+            + bd.role_fit * OVERSEAS_WEIGHTS["role_fit"]
+            + bd.domain * OVERSEAS_WEIGHTS["domain"]
+        ) / 100.0
+        if is_engineering_only(row["title"]):
+            weighted *= ENG_ONLY_PENALTY
+        if not is_pm_by_content(row["title"], row["raw_jd"]):
+            weighted *= PM_GATE_PENALTY
+        return int(round(weighted)), bd
+
+    # 日本軌：7 維（含 role_fit）
+    bd.market_keywords = score_market_keywords(blob, bd)
+    bd.tier_preference = score_tier_preference(row["tier"], bd)
+    bd.tech_overlap = score_tech_overlap(blob, bd)
+    bd.salary_fit = score_salary_fit(row, bd)
+    bd.remote_visa = score_remote_visa(row, bd)
+    bd.domain = score_domain(blob, bd)
+    bd.role_fit = score_role_fit(row["title"], bd)
+    weighted = (
+        bd.market_keywords * WEIGHTS["market_keywords"]
+        + bd.tier_preference * WEIGHTS["tier_preference"]
+        + bd.tech_overlap * WEIGHTS["tech_overlap"]
+        + bd.salary_fit * WEIGHTS["salary_fit"]
+        + bd.remote_visa * WEIGHTS["remote_visa"]
+        + bd.domain * WEIGHTS["domain"]
+        + bd.role_fit * WEIGHTS["role_fit"]
+    ) / 100.0
+    # 職能閘：純工程職（無 PM 字樣）降權，避免 PM 精選被工程職佔滿
+    if is_engineering_only(row["title"]):
+        weighted *= ENG_ONLY_PENALTY
+    # JD 內容閘：非 PM 職（Bizreach 雜訊等）重壓沉底
+    if not is_pm_by_content(row["title"], row["raw_jd"]):
+        weighted *= PM_GATE_PENALTY
+    return int(round(weighted)), bd
+
+

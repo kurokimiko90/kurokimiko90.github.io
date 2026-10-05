@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-labelledby="title desc">
+  <title id="title">Booking SaaS reconstruction</title>
+  <desc id="desc">Abstract booking flow connecting customer, operations, inventory, and payment.</desc>
+  <rect width="800" height="450" rx="28" fill="#101214"/>
+  <path d="M74 250C166 94 280 94 370 250S574 406 726 205" fill="none" stroke="#9f63ff" stroke-width="54" stroke-linecap="round"/>
+  <path d="M74 250C166 94 280 94 370 250S574 406 726 205" fill="none" stroke="#fff" stroke-opacity=".75" stroke-width="4" stroke-dasharray="14 18"/>
+  <g stroke="#d9dde3" stroke-width="3">
+    <rect x="56" y="63" width="150" height="94" rx="18" fill="#fff"/><rect x="325" y="294" width="150" height="94" rx="18" fill="#fff"/><rect x="594" y="42" width="150" height="94" rx="18" fill="#fff"/>
+  </g>
+  <g fill="#2f6bff"><circle cx="131" cy="110" r="22"/><circle cx="400" cy="341" r="22"/><circle cx="669" cy="89" r="22"/></g>
+  <g fill="#c8f135"><circle cx="131" cy="250" r="14"/><circle cx="400" cy="282" r="14"/><circle cx="669" cy="276" r="14"/></g>
+</svg>
