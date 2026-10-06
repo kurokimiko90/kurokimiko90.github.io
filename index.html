@@ -2403,7 +2403,7 @@
         <li class="lg-stage"><i>1</i><h3>絵で探す</h3><small>絵と単語をヒントに探す</small><p>ヒント全開で配置に慣れる。</p></li>
         <li class="lg-stage"><i>2</i><h3>文字で探す</h3><small>単語と絵で探す</small><p>文字と形を結びつける。</p></li>
         <li class="lg-stage"><i>3</i><h3>音で探す</h3><small>発音と絵で探す</small><p>音と位置を結びつける。</p></li>
-        <li class="lg-stage"><i>4</i><h3>記憶で探す</h3><small>隠れた物の場所を当てる</small><p>頼れるのは場所の記憶。ヒントは 1 問 1 回。</p></li>
+        <li class="lg-stage"><i>4</i><h3>記憶で探す</h3><small>隠れた物の場所を当てる</small><p>頼れるのは場所の記憶。<span style="white-space:nowrap">ヒントは 1 問 1 回。</span></p></li>
       </ol>
     </div>
     <aside class="rc-note"><b>補足</b>手がかりは段階的に減り、最後は場所の記憶が主役になる。絵は全ステージに残す（理由は次の章）。</aside>
@@ -2414,14 +2414,20 @@
   </div>
 </div><span class="screen-hook">次は、遊ぶ人から直す ↓</span></section>
 
+<style>
+  /* ── 改訂 2026-10j：遊ぶ人から直す（記憶の町）文節で折り返し、区切り線をそろえる ── */
+  #case-lagame-observe :is(.dlog-item h3,.dlog-item dd,.dlog-bridge){word-break:auto-phrase;text-wrap:pretty}
+  #case-lagame-observe .dlog-item dl{margin-top:0}
+  @media(min-width:901px){#case-lagame-observe .dlog-item h3{min-height:2.9em}}
+</style>
 <section class="screen" id="case-lagame-observe" data-title="遊ぶ人から直す"><div class="wrap screen-inner">
   <div class="section-head"><div><p class="label">遊ぶ人から直す</p><h2>迷った所は、<br>その場で直す。</h2></div><div class="sx-head"><p>家族が遊ぶ様子を横で観察し、止まった所をその場で改善案にする。</p><ol class="sx-flow"><li>横で観察</li><li>迷う所を特定</li><li>改善案</li><li class="is-end">反映</li></ol></div></div>
   <div class="dlog-grid">
-    <article class="dlog-item"><b>01 ・ 問題</b><h3>文字だけ・音だけの問題で、何を探すのか分からない</h3><dl><div><dt>変えたこと</dt><dd>全ステージの問題に絵を付ける</dd></div><div><dt>判断</dt><dd>「何を探すか」で迷わせず、「どこにあるか」の記憶に集中させる</dd></div></dl></article>
-    <article class="dlog-item"><b>02 ・ 配置</b><h3>物の置き方に脈絡がなく、探す手がかりにならない</h3><dl><div><dt>変えたこと</dt><dd>現実の場面どおりに配置（棚には商品、机には文房具）</dd></div><div><dt>判断</dt><dd>配置ロジックを部品化し、自動拡張の全エリアに同じ規則を適用</dd></div></dl></article>
+    <article class="dlog-item"><b>01 ・ 問題</b><h3>文字だけ・音だけの問題で、<span style="white-space:nowrap">何を探すのか</span>分からない</h3><dl><div><dt>変えたこと</dt><dd>全ステージの問題に絵を付ける</dd></div><div><dt>判断</dt><dd>「何を探すか」で迷わせず、「どこにあるか」の記憶に集中させる</dd></div></dl></article>
+    <article class="dlog-item"><b>02 ・ 配置</b><h3>物の置き方に脈絡がなく、探す<span style="white-space:nowrap">手がかり</span>にならない</h3><dl><div><dt>変えたこと</dt><dd>現実の場面どおりに配置（棚には商品、机には文房具）</dd></div><div><dt>判断</dt><dd>配置ロジックを部品化し、自動拡張の全エリアに同じ規則を適用</dd></div></dl></article>
     <article class="dlog-item"><b>03 ・ ヒント</b><h3>記憶ステージで手が止まる</h3><dl><div><dt>変えたこと</dt><dd>ヒントを 3 回から 10 回（1 問 1 回）に</dd></div><div><dt>判断</dt><dd>難しさは残し、詰まって進めない所だけ外す</dd></div></dl></article>
   </div>
-  <p class="dlog-bridge"><b>共通する判断</b>難しさは「場所を覚える」ことだけに残し、それ以外で止まる所はすべて外す。</p>
+  <p class="dlog-bridge"><b>共通する判断</b><span>難しさは「場所を覚える」ことだけに残し、<span style="white-space:nowrap">それ以外で</span>止まる所はすべて外す。</span></p>
   <aside class="rc-note" style="margin-top:24px"><b>補足</b>観察は一度きりで終わらせない。物ごとのプレイ記録を取り、見つけにくい物は自動で要確認リストへ載せる。</aside>
 </div><span class="screen-hook">次は、町が勝手に増える仕組み ↓</span></section>
 
